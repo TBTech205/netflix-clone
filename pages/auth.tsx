@@ -12,7 +12,7 @@ const Auth = () => {
 
   const toggleType = useCallback(() => {
     setType((current) => current === 'login' ? 'register' : 'login');
-  }, [type]);
+  }, []);
 
   const login = useCallback(async () => {
     try {
