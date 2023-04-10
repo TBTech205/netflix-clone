@@ -7,9 +7,9 @@ const Billboard = () => {
 	const { data } = useBillboard()
 
 	return (
-		<div className="relative h-[60vw] md:h-[40vw] lg:h-[56vw]">
+		<div className="relative h-[60vw] md:h-[56.25vw] lg:h-[56vw]">
 			<video
-				className="w-full h-[56vw] object-cover"
+				className="w-full h-[60vw] md:h-[56.25vw] lg:h-[56vw] object-cover"
 				src={data?.videoUrl}
 				poster={data?.thumbnailUrl}
 				muted
