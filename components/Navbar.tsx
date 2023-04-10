@@ -58,11 +58,11 @@ const Navbar = () => {
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
-  }, [showMobileMenu])
+  }, [])
 
   const toggleUserMenu = useCallback(() => {
     setShowUserMenu((current) => !current);
-  }, [showUserMenu])
+  }, [])
 
   const bg = showBackground ? 'bg-zinc-800 bg-opacity-90' : 'bg-zinc-900 bg-opacity-0';
   const smm = showMobileMenu ? 'rotate-180' : 'rotate-0';
