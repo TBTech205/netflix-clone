@@ -31,7 +31,7 @@ const Profiles = () => {
   return (
     <div className="flex items-center justify-center h-full">
       <div className="flex flex-col">
-        <h1 className="text-3xl text-white font-bold center md:text-5xl">Who's Watching?</h1>
+        <h1 className='text-3xl text-white font-bold center md:text-5xl'>Whos Watching?</h1>
         <div className="flex items-center justify-center gap-5 mt-8">
           
           <div onClick={openProfile}>
