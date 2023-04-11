@@ -35,11 +35,11 @@ const Home = () => {
       <Navbar />
       <Billboard />
       
-      <div className="pb-5">
+      <div className="mt-4">
         <MovieList title="Trending Now" data={movies} />
       </div>
       
-      <div className="pb-5">
+      <div className="mt-4">
         <MovieList title="My List" data={favorites} />
       </div>
     </>

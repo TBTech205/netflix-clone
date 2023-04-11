@@ -39,7 +39,7 @@ const Profiles = () => {
               <div className="w-44 h-44 rounded-md flex items-center justify-center border-2 border-transparent group-hover:cursor-pointer group-hover:border-white overflow-hidden">
                 <img src="/images/default-blue.png" alt="Avatar1" className="w-full h-full object-cover" />
               </div>
-              <div className="mt-1 text-center text-neutral-400 text-xl group-hover:text-white">
+              <div className="mt-1 text-center text-neutral-400 text-xl  group-hover:text-white group-hover:font-semibold">
                 <p>{user?.name}</p>
               </div>
             </div>

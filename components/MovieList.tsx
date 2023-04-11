@@ -21,37 +21,42 @@ const MoveCard: React.FC<MovieCardProps> = ({ data }) => {
         alt="Thumbnail"
       />
 
-      <div className="absolute top-0 z-10 w-full opacity-0 transition duration-200 invisible delay-300 scale-0 group-hover:scale-150 group-hover:-translate-y-[6vw] group-hover:translate-x-[5vw] group-hover:opacity-100 sm:visible">
+      <div className="absolute top-0 z-10 w-full opacity-0 transition duration-200 invisible delay-300 scale-0 group-hover:scale-150 group-hover:-translate-y-[6vw] group-hover:translate-x-[4vw] group-hover:opacity-100 sm:visible
+      lg:group-hover:scale-100 lg:group-hover:-translate-y-[5vw] lg:group-hover:translate-x-[0vw] lg:first:group-hover:translate-x-[4vw] lg:last:group-hover:translate-x-[0vw]
+      ">
         <img
           className="w-full h-[12vw] cursor-pointer object-cover transition duration shadow-xl rounded-t-md"
           src={data?.thumbnailUrl}
           alt="Thumbnail"
         />
 
-        <div className="absolute z-10 w-full h-full bg-zinc-800 shadow-md rounded-b-md p-2 md:p-3 lg:p-5">
-          <div className="flex justify-between">
-            <div className="flex gap-1">
-              <PlayButton movieId={data?.id} />
-              <FavoriteButton movieId={data?.id} />
+        <div className="absolute z-10 w-full h-full bg-zinc-800 shadow-md rounded-b-md p-2 md:p-3 lg:p-3 lg:h-max">
+          <div className="lg:mb-2">
+            <div className="flex justify-between">
+              <div className="flex gap-1 lg:text-2xl">
+                <PlayButton movieId={data?.id} />
+                <FavoriteButton movieId={data?.id} />
+              </div>
+              <div>
+                <button
+                  className="flex justify-center items-center text-white bg-zinc-600 cursor-pointer h-6 w-6 rounded-full lg:h-10 lg:w-10 lg:text-2xl hover:bg-zinc-700 " 
+                  onClick={() => {}}
+                >
+                  <BsChevronDown />
+                </button>
+              </div>
             </div>
-            <div>
-              <button
-                className="flex justify-center items-center text-white bg-zinc-600 cursor-pointer h-6 w-6 rounded-full lg:h-10 lg:w-10 hover:bg-zinc-700"
-                onClick={() => {}}
-              >
-                <BsChevronDown />
-              </button>
-            </div>
-          </div>
 
-          <div className="flex gap-[6px] items-center mt-2">
-            <h2 className="text-green-700 text-[12px] font-semibold">New</h2>
-            <p className="text-[12px] font-semibold">6+</p>
-            <p className="text-[10px] mt-1">{data?.duration}</p>
+            <div className="flex gap-[6px] items-center mt-2 text-[12px] lg:text-[18px]">
+              <h2 className="text-green-700 font-semibold">New</h2>
+              <p className="font-semibold">6+</p>
+              <p className="text-[10px] mt-1 lg:text-[16px]">{data?.duration}</p>
+            </div>
+            
+            <p className="font-semibold">{data?.genre}</p>
           </div>
-          
-          <p className="text-[12px] font-semibold">{data?.genre}</p>
         </div>
+
       </div>
     </div>
   )
