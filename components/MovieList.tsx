@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { isEmpty } from 'lodash'
 import { BsChevronDown } from 'react-icons/bs'
+import useInfoModal from '@/hooks/useInfoModal'
 import { PlayButton } from '@/components/PlayButtons'
 import FavoriteButton from '@/components/FavoriteButton'
 
@@ -13,6 +14,12 @@ interface MovieCardProps {
 }
 
 const MoveCard: React.FC<MovieCardProps> = ({ data }) => {
+  const { openModal } = useInfoModal()
+
+  const openModalClick = useCallback(() => {
+		openModal(data?.id)
+	}, [openModal, data?.id])
+
   return (
     <div className="group bg-zinc-900 text-white col-span relative h-[12vw] rounded-md">
       <img
@@ -39,8 +46,8 @@ const MoveCard: React.FC<MovieCardProps> = ({ data }) => {
               </div>
               <div>
                 <button
+                  onClick={openModalClick}
                   className="flex justify-center items-center text-white bg-zinc-600 cursor-pointer h-6 w-6 rounded-full lg:h-10 lg:w-10 lg:text-2xl hover:bg-zinc-700 " 
-                  onClick={() => {}}
                 >
                   <BsChevronDown />
                 </button>
